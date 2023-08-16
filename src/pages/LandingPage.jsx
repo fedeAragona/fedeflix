@@ -13,7 +13,7 @@ export function LandingPage(){
         const userResponse = getUser();
         if (!userResponse) navigate('/login');
         setUser(userResponse);
-    }, []);
+    },[navigate]);
 
     return (
         <div>

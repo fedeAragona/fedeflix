@@ -21,12 +21,10 @@ export function MovieDetails() {
     useEffect(() => {
         const userResponse = getUser();
         if (!userResponse) navigate('/login');
-    }, []);
+    }, [navigate]);
 
-    if (!peli) 
-        return null;
+    if (!peli) return null;
     
-
     return (
         <div>
             <img className={style.imgBackground} src={peli.Poster} alt={peli.Title}></img>
