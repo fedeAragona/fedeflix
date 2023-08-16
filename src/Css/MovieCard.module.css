@@ -1,0 +1,48 @@
+.movieCard{
+    list-style: none;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.movieCard:hover{
+    opacity: 0.8;
+}
+
+.movieImage{
+    background-color: azure;
+}
+
+@media (max-width: 560px){
+    .movieImage{
+        width: 90%;
+        height: auto;
+    }
+}
+
+.row_posters{
+    width: 100%;
+    object-fit: contain;
+    max-height: 100px;
+    margin-right: 10px;
+    transition: trasform 450ms;
+}
+
+.row_posters{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.row_posters:hover{
+  transform: scale(1.08);
+}
+
+.row_posters::-webkit-scrollbar{
+    display: none;
+  }
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}

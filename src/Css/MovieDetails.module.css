@@ -1,0 +1,75 @@
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 7%;
+}
+
+strong{
+  color: white;
+}
+
+p{
+  color: rgb(152, 149, 149);
+  font-size: 1.2rem;
+  padding-top: 15px;
+}
+
+.col {
+  max-width: 400px;
+  margin: 15px;
+  height: auto;
+  width: 80%;
+}
+
+.movieImage {
+  border-radius: 15px;
+}
+
+.movieDetails {
+  font-size: 1.5rem;
+}
+
+.firstItem {
+  padding-top: 0px;
+  margin-top: 0;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: left;
+  padding-top: 40px;
+  padding-left: 50px;
+}
+
+.backButton{
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  width: 70px;
+  height: 30px;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.imgBackground{
+  position: absolute;
+  z-index: -1;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  object-fit: cover;
+  }
+
+@media (max-width: 560px){
+.imgBackground{
+  background-size: cover;
+  height: 100vh;
+}
+
+.detailsContainer {
+  padding-top: 14%;
+}
+}

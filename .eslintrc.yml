@@ -1,0 +1,28 @@
+root: true
+env:
+  es6: true
+  node: true
+extends:
+  - react-app
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+  # Prevent tests broken undefined global variables
+  beforeEach: readonly
+  afterEach: readonly
+  before: readonly
+  after: readonly
+  describe: readonly
+  expect: readonly
+  it: readonly
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+rules:
+  semi: [2, 'always']
+  quotes: [2, 'single']
+  indent: [2, 4, { 'SwitchCase': 1 }]
+  comma-dangle: ['error', 'only-multiline']
+  brace-style: [2, 'stroustrup', { 'allowSingleLine': true }]
+  no-return-assign: 'off'
+  curly: ['error', 'multi']
