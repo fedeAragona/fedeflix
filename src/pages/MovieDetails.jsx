@@ -48,6 +48,11 @@ export function MovieDetails() {
                     <p>
                         <strong>Descripcion:</strong> {peli.Plot}
                     </p>
+                    <br />
+                    <dir className={style.contenedorYoutube}>
+                        <a href={`https://www.youtube.com/results?search_query=${peli.Title} trailer`} target='_blank' rel='noopener noreferrer'><button className={style.buttonTrailer}>Ver trailer</button></a>
+                        <img className={style.youtube} src="/youtube.png" alt="youtube" />
+                    </dir>
                 </div>
             </div>
         </div> 
