@@ -4,6 +4,7 @@ import { Navbar } from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getUser } from '../services/auth';
+import style from '../Css/landingPage.module.css';
 
 export function LandingPage(){
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ export function LandingPage(){
 
     return (
         <div>
+            <img className={style.fondo} src="/fondoHome.png" alt="fondo" />
             <Navbar user={user} />
             <Search/>
             <MoviesGrid/>

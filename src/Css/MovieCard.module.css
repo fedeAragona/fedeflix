@@ -6,10 +6,12 @@
 
 .movieCard:hover{
     opacity: 0.8;
+    scale: 1.02;
 }
 
 .movieImage{
     background-color: azure;
+    border-radius: 2%;
 }
 
 @media (max-width: 560px){
@@ -46,3 +48,4 @@
     margin: 0;
     box-sizing: border-box;
 }
+
