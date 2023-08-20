@@ -1,12 +1,15 @@
+//IMPORT LIBRARIES, COMPONENTS, STYLES AND NECESSARY FUNCTIONS
 import { useLocation } from 'react-router-dom';
 import { MovieCard } from './MovieCard';
 import style from '../Css/MovieGrid.module.css';
 import { useEffect, useState } from 'react';
 
+//GET QUERY PARAMETERS FROM URL
 function useQuery () {
     return new URLSearchParams(useLocation().search);
 }
 
+//SET VALUES AND SET PARAMETERS
 export function MoviesGrid () {
     const moviesState = useState([]);
     const movies = moviesState[0];
@@ -15,9 +18,9 @@ export function MoviesGrid () {
     const query = useQuery();
     const search = query.get('search');
 
+    //OBTAIN THE PARAMETERS, ASSEMBLE THE QUERY TO THE API AND SAVE THE DATA OBTAINED
     useEffect(() => {
         const searchUrl = search || 'shrek';
-        console.log(searchUrl);
 
         const updateMovies = (newMovies) => {
             setMovies(newMovies);
@@ -30,6 +33,7 @@ export function MoviesGrid () {
             });
     }, [search, setMovies]);
 
+    //CHECK IF QUERY RESULTS ARE FOUND
     if (!movies)
         return (
             <div>
@@ -37,6 +41,7 @@ export function MoviesGrid () {
             </div>
         );
 
+    //IF I RECEIVE POSITIVE RESULTS, I RENDER THE MOVIE GRID AND RUN THE MOVIECARD COMPONENT
     return (
         <ul>
             <div className={style.movieTitle}>

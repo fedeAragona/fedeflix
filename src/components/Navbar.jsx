@@ -1,3 +1,4 @@
+//IMPORT LIBRARIES, COMPONENTS, STYLES AND NECESSARY FUNCTIONS
 import style from '../Css/Navbar.module.css';
 import { Notifications } from '@material-ui/icons';
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import { getUser } from '../services/auth';
 
 export function Navbar ({ user }) {
 
+    //I KEEP MY NAVBAR ALWAYS VISIBLE ON THE SCREEN WHEN SCROLLING
     const [isScrolled, setIsScrolled] = useState(false);
 
     window.onscroll = () => {
@@ -13,8 +15,10 @@ export function Navbar ({ user }) {
         return () => (window.onscroll = null);
     };
 
+    //GET THE STORED INFORMATION OF THE USER TO SHOW THE EMAIL IN THE NAVBAR
     user = getUser();
 
+    //NAVBAR RENDERING
     return (
         <div className={style.navbar}>
             <div className={style.container}>

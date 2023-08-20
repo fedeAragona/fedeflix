@@ -1,3 +1,4 @@
+//IMPORT LIBRARIES, COMPONENTS, NEEDED FUNCTIONS
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MovieDetails } from './pages/MovieDetails';
@@ -8,18 +9,21 @@ import { LandingPage } from './pages/LandingPage';
 import { Navbar } from './components/Navbar';
 import { getUser } from './services/auth';
 
+
 export function App() {
     const [user, setUser] = useState();
-
-    useEffect(() => {
+    
+    //I VERIFY IF I HAVE A USER UPLOADED IN LOCALSTORAGE
+    useEffect(() => {  
         const userResponse = getUser();
         setUser(userResponse);
     }, []);
-
-    return (
+    
+    //ASSIGN THE ROUTES OF MY PROJECT WITH ITS COMPONENTS TO RENDER
+    return ( 
         <Router>
-            <main>
-                <Routes>
+            <main> 
+                <Routes> 
                     <Route path="/" element={<Intro />} />
                     <Route path="/home" element={<LandingPage />} />
                     <Route path="/register" element={<Register />} />

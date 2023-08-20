@@ -1,3 +1,4 @@
+//IMPORT LIBRARIES, COMPONENTS, STYLES AND NECESSARY FUNCTIONS
 import React, { useState, useEffect } from 'react';
 import style from '../Css/Login.module.css';
 import {useNavigate} from 'react-router-dom';
@@ -7,24 +8,29 @@ import { Link } from 'react-router-dom';
 export function Login() {
     const navigate = useNavigate();
 
+    //I USE THE USESTATE HOOK TO SET INITIAL VALUE IN THE VARIABLES FOR THE LOGIN
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
 
+    //KEEP VALUES UPDATED
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
+    //IF I AM IN LOGIN, THE USER IS FORCED TO LOGOUT
     useEffect(() => {
         logout();
     }, []);
 
+    //I PREVENT THE RELOADING OF THE PAGE AND VALIDATE THE LOGIN, IF IT MEETS THE CONDITION, IT IS REDIRECTED TO HOME
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (login(email, password)) navigate('/home');
         else setError(true);
     };
-
+    
+    //AMOUNT LOGIN FORM
     return (
         <div className={style.container}>
             <img className={style.loginLogo} alt='logo' src='Logo.png'></img>

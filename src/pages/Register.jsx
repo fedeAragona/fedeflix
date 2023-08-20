@@ -1,3 +1,4 @@
+//IMPORT LIBRARIES, COMPONENTS, STYLES AND NECESSARY FUNCTIONS
 import React, { useState, useEffect } from 'react';
 import style from '../Css/Register.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -7,25 +8,30 @@ import { Link } from 'react-router-dom';
 export function Register() {
     const navigate = useNavigate();
 
+    //I USE THE USESTATE HOOK TO SET INITIAL VALUE IN THE REGISTRY VARIABLES
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const [error, setError] = useState(false);
 
+    //KEEP VALUES UPDATED
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
     const handlePasswordConfirmChange = (e) => setPasswordConfirm(e.target.value);
 
+    //IF I AM IN LOGIN, THE USER IS FORCED TO LOGOUT
     useEffect(() => {
         logout();
     }, []);
 
+    //I PREVENT THE PAGE RELOADING AND VALIDATE THE REGISTRATION, IF IT FULFILLS THE REQUEST, IT IS REDIRECTED TO HOME
     const handleSubmit = (e) => {
         e.preventDefault();
         if (register(email, password, passwordConfirm)) navigate('/home');
         else setError(true);
     };
 
+    //AMOUNT REGISTRATION FORM
     return (
         <div className={style.container}>
             <img className={style.RegisterLogo} alt='logo' src='Logo.png'></img>

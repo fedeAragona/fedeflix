@@ -1,3 +1,4 @@
+//IMPORT LIBRARIES, COMPONENTS, STYLES AND NECESSARY FUNCTIONS
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from '../Css/Intro.module.css';
@@ -7,11 +8,13 @@ import {useNavigate} from 'react-router-dom';
 export function Intro() {
     const navigate = useNavigate();
 
-    useEffect(() => {
+    //VERIFY IF I HAVE A LOADED USER AND USE THE NAVIGATE FUNCTION TO REDIRECT
+    useEffect(() => { 
         const user = getUser();
         if (user) navigate('/');
     },[navigate]);
 
+    //IF SUCH CONDITION PASSES, I RENDER INTRO
     return (
         <div className={style.container}>
             <video autoPlay muted loop className={style.video}>
