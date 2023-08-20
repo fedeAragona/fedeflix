@@ -32,3 +32,6 @@ Componentes utilizados:
 
 Herramientas de analisis utilizadas:
     -Linter
+
+Docker:
+    -https://hub.docker.com/r/fedearagona/fedeflix
